@@ -1,0 +1,14 @@
+{% extends "users/layout.html" %}
+
+{% block title %}Profil uživatele{% endblock %}
+
+{% block body %}
+<div class="content-box">
+    <h2 class="mb-4">Vítej, {{ request.user.first_name }}</h2>
+    <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Uživatelské jméno:</strong> {{ request.user.username }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ request.user.email }}</li>
+    </ul>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Odhlásit se</a>
+</div>
+{% endblock %}

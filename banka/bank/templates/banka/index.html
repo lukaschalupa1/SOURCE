@@ -1,0 +1,65 @@
+{% extends "banka/layout.html" %}
+{% block title %}Domovská stránka{% endblock %}
+{% block body %}
+<div class="content-box">
+  <h2>Zákazníci</h2>
+  <div class="row">
+    {% for customer in customers %}
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ customer.first_name }} {{ customer.last_name }}</h5>
+          <p class="card-text">
+            Věk: {{ customer.age }} let<br>
+            Adresa: {{ customer.address }}<br>
+            Pohlaví: {{ customer.gender }}<br>
+            Kontakt: {{ customer.contact_info }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="content-box">
+  <h2>Účty</h2>
+  <ul class="list-group mb-3">
+    {% for account in accounts %}
+    <li class="list-group-item">
+      Číslo: {{ account.account_number }} ({{ account.account_type }})<br>
+      Zůstatek: {{ account.balance }} {{ account.currency }}<br>
+      Vytvořeno: {{ account.created_at }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="content-box">
+  <h2>Půjčky</h2>
+  <ul class="list-group mb-3">
+    {% for loan in loans %}
+    <li class="list-group-item">
+      Typ: {{ loan.loan_type }}<br>
+      Částka: {{ loan.amount }} CZK<br>
+      Úrok: {{ loan.interest_rate }} %<br>
+      Trvání: {{ loan.duration_months }} měsíců<br>
+      Splátka: {{ loan.monthly_payment }} CZK<br>
+      Stav: {{ loan.status }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="content-box">
+  <h2>Kreditní karty</h2>
+  <ul class="list-group mb-3">
+    {% for card in credit_cards %}
+    <li class="list-group-item">
+      Typ: {{ card.card_type }}<br>
+      Limit: {{ card.limit }} CZK<br>
+      Roční poplatek: {{ card.annual_fee }} CZK<br>
+      Úrok: {{ card.interest_rate }} %<br>
+      Stav: {% if card.active %}Aktivní{% else %}Neaktivní{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
