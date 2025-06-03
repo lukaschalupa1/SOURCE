@@ -1,27 +1,26 @@
-# SOURCEAdd commentMore actions
-# Bankovní aplikace (Django)
+Bankovní aplikace (Django)
 
-Tato webová aplikace simuluje základní funkce banky – registrace uživatele, přihlášení, zůstatek, převody mezi účty apod. Aplikace je postavena na frameworku **Django** v jazyce **Python**.
+Tato webová aplikace simuluje základní funkce banky – registrace uživatele, přihlášení, zůstatek, převody mezi účty apod. Aplikace je postavena na frameworku Django v jazyce Python.
 
-## Použité technologie
+Použité technologie
 - Python 3.10+
 - SQLite (výchozí databáze)
 - Bootstrap
 - ...
 
-## Lokální spuštění
+Lokální spuštění
 
-### 1. Stažení projektu
+1. Stažení projektu
 Nejprve si stáhněte.
 
 2. Vytvoření virtuálního prostředí
 Doporučeno pro správu závislostí:
 
 python -m venv venv
-# Aktivace:
-# Windows:
+Aktivace:
+Windows:
 venv\Scripts\activate
-# macOS/Linux:
+macOS/Linux:
 source venv/bin/activate
 
 3. Instalace závislostí
